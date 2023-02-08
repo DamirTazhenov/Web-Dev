@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <script src="https://kit.fontawesome.com/b04fc8f8bf.js" crossorigin="anonymous"></script>
+    <style>
+        @font-face {
+            font-family: "Roboto";
+            src: url("fonts/Roboto/Roboto-Regular.ttf");
+        }
+
+        a{
+            text-decoration: none;
+            color: black
+        }
+
+        .caption{
+            display: flex;
+            justify-content: center;
+        }
+
+        .caption2{
+            width: 200px;
+            height: 103px;
+            background-image: url("https://static.cdninstagram.com/rsrc.php/v3/y-/r/yXM3FgMdVNX.png");
+            background-position: top;
+            background-repeat: no-repeat;
+            margin-bottom: 10px;
+        }
+        .parent{
+            background-color: #fafafa;
+            padding: 5% 17%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .entry{
+            width: 40%;
+        }
+        .form{
+            width: 40%;
+            box-sizing: border-box;
+        }
+
+        .firstform{
+            background-color: #fff;
+            border: 1px solid #dbdbdb;
+            padding: 3%;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+
+        .thirdform div img{
+            width: 100%;
+            height: 100%;
+        }
+
+        .firstform input{
+            padding: 2%;
+            width: 100%;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        .btn{
+            padding: 2%;
+            background-color: #4db5f9;
+            display: flex;
+            justify-content: center;
+            border-radius: 8px;
+            margin-bottom: 10px;
+
+        }
+
+        .btn div{
+            font-family: "Roboto";
+            color: #fff;
+            font-weight: 550;
+
+        }
+
+        .or{
+            display: flex;
+            color: #dbdbdb;
+        }
+
+        hr{
+            width: 100%;
+            height: 100%;
+        }
+
+        .orrr{
+            margin: 0 7px
+        }
+
+        .faceb{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #385185;
+        }
+
+        .faceb i{
+            margin-right: 10px  ;
+        }
+
+        .forgot{
+            display: flex;
+            justify-content: center;
+            color: #385185;
+        }
+
+        .forgot a{
+            color: #385185;
+        }
+
+        .secondform{
+            background-color: #fff;
+            border: 1px solid #dbdbdb;
+            padding: 3%;
+            box-sizing: border-box;
+        }
+
+        .secondform a{
+            color: #4db5f9;
+        }
+
+        .ev{
+            width: 50%;
+        }
+
+        .imag{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .thirdform{
+            text-align: center;
+        }
+
+        .footer{
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            color: #8E8E8E;
+            font-size: 14px;
+        }
+
+        .links{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .links a{
+            display: flex;
+            flex-wrap: nowrap;
+            color:#8E8E8E;
+            margin-right: 5px;
+            padding: 1%;
+        }
+
+        .underlinks{
+            display: flex;
+            justify-content: center;
+        }
+
+        .underlinks a{
+            margin-right: 5px;
+            color: #8E8E8E;
+        }
+
+        .secondform p:hover,
+        .imag:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="parent">
+    <div class="entry">
+        <div class="phone">
+            <img src="https://static.cdninstagram.com/rsrc.php/v3/y4/r/ItTndlZM2n2.png" alt="">
+        </div>
+    </div>
+    <div class="form">
+        <div class="firstform">
+            <div class="caption">
+                <div class="caption2"></div>
+            </div>
+            <div class="login">
+                <input type="text" placeholder="Телефон, имя пользователя или эл. адрес">
+            </div>
+            <div class="password">
+                <input type="text" placeholder="Пароль">
+            </div>
+            <div class="btn">
+                <div>Войти</div>
+            </div>
+            <div class="or"><hr><div class="orrr">ИЛИ</div><hr></div>
+            <div class="faceb">
+                <i class="fa-brands fa-facebook"></i>
+                <p>Войти через Facebook</p>
+            </div>
+            <div class="forgot">
+                <a href="">Забыли пароль?</a>
+            </div>
+        </div>
+        <div class="secondform">
+            <p>У вас еще нет аккаунта? <a href="">Зарегистрироваться</a></p>
+        </div>
+        <div class="thirdform">
+            <div><p>Установите приложение</p></div>
+            <div class="imag">
+                <div class="ev">
+                    <img src="https://static.cdninstagram.com/rsrc.php/v3/yr/r/fDjwyLC88oO.png" alt="">
+                </div>
+                <div class="ev">
+                    <img src="https://static.cdninstagram.com/rsrc.php/v3/yv/r/_UbeIRgTpG-.png" alt="">
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="footer">
+        <div class="links">
+            <a href="">Meta</a>
+            <a href="">Информация</a>
+            <a href="">Блог</a>
+            <a href="">Вакансии</a>
+            <a href="">Помощь</a>
+            <a href="">API</a>
+            <a href="">Конфиденциальность</a>
+            <a href="">Условия</a>
+            <a href="">Популярные аккаунты</a>
+            <a href="">Места</a>
+            <a href="">Instagram Lite</a>
+        </div>
+        <div class="underlinks">
+            <a href="">Русский</a>
+            © 2023 Instagram from Meta
+        </div>
+    </div>
+</div>
+</body>
+</html>
