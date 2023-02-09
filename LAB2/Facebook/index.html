@@ -4,8 +4,13 @@
         <meta charset="utf-8">
         <style>
             *{
-                font-family: inherit;
+                font-family: Helvetica;
                 font-size: 12px;
+            }
+            body{
+                margin:0;
+                padding: 0;
+                max-height: 720px;
             }
             h1, h2, h3, h4, h5, h6{
                 color: #1c1e21;
@@ -28,8 +33,8 @@
                 padding: 0;
             }
             .main{
-                width: auto;
-                min-height: 640px;
+                width: 100%;
+                min-height: 70%;
                 background-color: #f0f2f5;
                 min-width: 500px;
                 display: block;
@@ -37,11 +42,11 @@
                 padding-top: 70px;
             }
             .content{
-                display: block;
                 margin:0 auto;
                 padding: 20px 0;
                 position: relative;
-                width: 980px;
+                display: block;
+                width: 64%;
                 color:black;
             }
             .intro_left{
@@ -81,6 +86,7 @@
                 
             }
             .login{
+                height: 70%;
                 display: block;
                 padding-top: 10px;
                 padding-bottom: 24px;
@@ -88,6 +94,113 @@
                 border:none;
                 border-radius: 8px;
                 box-shadow: 0 2px 4px rgb(0 0 0/ 10%);
+                background-color: #fff;
+            }
+            input{
+                -webkit-appearance: none;
+                border-radius: 6px;
+                border: 0;
+                width: 90%;
+                height: 22px;
+                line-height: 16px;
+                font-size: 17px;
+                padding: 14px 17px;
+                margin: 1% 0;
+                background-color: #dbdbdb;
+            }
+            .input_rows{
+                display: block;
+                width: 100%;
+                text-align: center;
+                margin-top: 15%;
+            }
+            .div_login{
+                width: 95%;
+                border-radius: 6px;
+                border: #1c1e21;
+                margin-right: auto;
+                margin-left: auto;
+            }
+            .enter{
+                width: 90%;
+                line-height: 300%;
+                border-radius: 6px;
+                border: 0.8px #0067b8;
+                background-color: #0067b8;
+                font-size: 20px;
+                color: white;
+            }
+            .forget{
+                display: block;
+                margin-top:16px;
+                text-align: center;
+                font-size: 12px;
+            }
+            .forget a{
+                color: #1877f2;
+                font-size: 14px;
+                font-weight: 500;
+                text-decoration: none;
+            }
+            .line{
+                align-items: center;
+                border-bottom: 1px solid #dadde1;
+                display: flex;
+                margin: 20px 16px;
+                text-align: center;
+            }
+            .register_button{
+                display: block;
+                padding-top: 10px;
+                text-align: center;
+            }
+            a{
+                text-decoration: none;
+            }
+            .register_button a{
+                border: none;
+                border-radius: 6px;
+                font-size: 17px;
+                line-height: 48px;
+                padding: 0 16px;
+                cursor: pointer;
+                display: inline-block;
+                text-decoration: none;
+                white-space: nowrap;
+                background-color: #42b72a;
+                color:white;
+            }
+            .floater{
+                display: block;
+                padding-bottom: 20px;
+                align-content: center;
+                align-items: center;
+            }
+            .page_floater{
+                width: 64%;
+                margin-left: auto;
+                margin-right: auto;
+                color: #737373;
+            }
+            .floater_lang{
+                padding-top: 8px;
+                align-items: center;
+                display: flex;
+                flex-wrap: wrap;
+            }
+            ul{
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+            }
+            #contentCurve{
+                border-bottom: 1px solid #dddfe2;
+                font-size: 1px;
+                height: 8px;
+                margin-bottom: 8px;
+            }
+            .floater_lang a{
+                margin: 0px 10px 0 5px;
             }
         </style>
     </head>
@@ -107,12 +220,12 @@
                         <form class="" action="">
                             <input type="hidden" name="jazoest" value="2973" autocomplete="off">
                             <input type="hidden" name="lsd" value="AVrcq2XHuXQ" autocomplete="off">
-                            <div>
-                                <div class="_6lux">
-                                    <input type="text" class="inputtext _55r1 _6luy" name="email" id="email" data-testid="royal_email" placeholder="Электронный адрес или номер телефона" autofocus="1" aria-label="Электронный адрес или номер телефона">
+                            <div class="input_rows">
+                                <div class="div_login">
+                                    <input type="text" class="" name="email" id="email" data-testid="royal_email" placeholder="Электронный адрес или номер телефона" autofocus="" aria-label="Электронный адрес или номер телефона">
                                 </div>
-                                <div class="_6lux">
-                                    <div class="_6luy _55r1 _1kbt _9nyi" id="passContainer">
+                                <div class="div_login">
+                                    <div class="" id="passContainer">
                                         <input type="password" class="inputtext _55r1 _6luy _9npi" name="pass" id="pass" data-testid="royal_pass" placeholder="Пароль" aria-label="Пароль">
                                         <div class="_9ls7" id="u_0_3_al">
                                             <a href="#" role="button">
@@ -125,15 +238,48 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="div_login">
+                                    <button value="1" class="enter" name="login" data-testid="royal_login_button" type="submit" id="u_0_5_Sq">Вход</button>
+                                </div>
+                                <div class="forget"><a href="">Забыли пароль?</a></div>
+                                <div class="line"></div>
+                                <div class="register_button"><a role="button" class="" href="#" id="" data-testid="open-registration-form-button" rel="async">Создать новый аккаунт</a></div>
                             </div>
                         </form>
                     </div>
                     <div class="reg_page"></div>
                 </div>
             </div>
+            <div class="floater">
+
+            </div>
         </div>
         <div class="floater">
-
+            <div class="page_floater">
+                <ul class="floater_lang" data-nocookies="1">
+                    <li><a href="">Русский</a></li>
+                    <li>
+                        <a class="_sv4" dir="ltr" href="https://www.facebook.com/"  title="English (US)">English (US)</a>
+                    </li>
+                    <li>
+                        <a class="_sv4" dir="ltr" href="https://tr-tr.facebook.com/"  title="Turkish">Türkçe</a>
+                    </li>
+                </ul>
+                <div id="contentCurve"></div>
+                <div class="pageFooterChildren">
+                    <ul class="floater_lang" data-nocookies="1">
+                        <li>
+                            <a href="">Главная</a>
+                        </li>
+                        <li>
+                            <a class="" dir="ltr" href=""  title="English (US)">Регистрация</a>
+                        </li>
+                        <li>
+                            <a class="_sv4" dir="ltr" href=""  title="Turkish">Месседжер</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </body>
 </html>
