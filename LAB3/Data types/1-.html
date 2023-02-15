@@ -1,0 +1,33 @@
+<html>
+<head>
+    <script>
+        let str = "Привет";
+
+        str.test = 5;
+
+        alert(str.test);
+
+        //
+
+        alert( 6.35.toFixed(20) );
+        alert( Math.round(6.35 * 10) / 10 );
+        alert( (6.35 * 10).toFixed(20) );
+        //
+        function readNumber() {
+            let num;
+
+            do {
+                num = prompt("Введите число", 0);
+            } while ( !isFinite(num) );
+
+            if (num === null || num === '') return null;
+
+            return +num;
+        }
+
+        alert(`Число: ${readNumber()}`);
+    </script>
+</head>
+<body>
+</body>
+</html>
