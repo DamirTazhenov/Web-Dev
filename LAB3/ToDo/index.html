@@ -1,5 +1,6 @@
 <html>
 <head>
+    <link rel="stylesheet" href="external.css">
     <style>
         * {
             font-family: monospace;
@@ -7,68 +8,106 @@
             padding: 0;
         }
         html, body{
-            height: 100%;
-        }
-        main {
-            display: grid;
-            grid-template-areas:
-                        'head head head head'
-                        'side content content content'
-                        'foot foot foot foot';
-            grid-template-rows: 50px auto 50px;
-            flex: 1 0 auto;
-        }
-        header{
-            grid-area: head;
-            max-height: 50px;
-        }
-        todo{
-            grid-area: content;
-        }
-        aside{
-            grid-area: side;
-            grid-row: auto;
-        }
-        footer{
-            max-height: 50px;
-            grid-area: foot;
-            flex: 0 0 auto;
+            width: 100%;
         }
         .important{
             font-weight: bold;
             color: red;
         }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        .todo_list{
+            width: 50%;
+            margin: 0 auto;
+            background-color: #dbdbdb;
+            border-radius: 6px;
+            box-shadow: #1c1e21;
+        }
 
+        imput{
+            display: table-cell;
+            vertical-align: middle;
+        }
+        ul{
+            text-decoration: none;
+            list-style-type: none;
+            vertical-align: middle;
+        }
+        .site-header {
+            border-bottom: 1px solid #ccc;
+            padding: .5em 1em;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .site-identity h1 {
+            font-size: 1.5em;
+            margin: .6em 0;
+            display: inline-block;
+        }
+
+
+        .site-navigation ul,
+        .site-navigation li {
+            margin: 0;
+            padding: 0;
+        }
+
+        .site-navigation li {
+            display: inline-block;
+            margin: 1.4em 1em 1em 1em;
+        }
+        .content{
+            width: 70%;
+            display: flex;
+            margin: 5% auto;
+            text-align: center;
+        }
+        hr{
+            margin: 20px;
+        }
+        .list{
+            width: 100%;
+        }
+        li{
+
+        }
     </style>
 </head>
 <body>
 <main>
-    <header>
-        <div>
-            <h1 style="margin: 0 auto">header</h1>
+    <header class="site-header">
+        <div class="site-identity">
+            <h1><a href="#">To Do list</a></h1>
         </div>
+        <nav class="site-navigation">
+            <ul class="nav">
+                <li><a href="#">About</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <todo>
-        <h2>there will be todo list</h2>
-        <div class="todo_list">
-            <h3>My To Do list</h3>
+    <div class="content">
+        <div class="todo_list" id="">
+            <h2>My To Do list</h2>
             <p>Some description about this to do list</p>
             <div class="create_new_todo">
                 <input type="text" class="message">
                 <button class="add">Add task</button>
             </div>
-            <div class="wrapper">
-                <ul class="todo">
+            <hr>
+
+            <div class="list" id="checklist">
+                <ul class="todo" id="">
 
                 </ul>
             </div>
         </div>
-    </todo>
-
-    <aside>
-        <h2>there will be aside part</h2>
-    </aside>
+    </div>
 
     <footer>
         <h2>there will be footer part</h2>
@@ -105,10 +144,10 @@ function displayMessages() {
     }
     ToDoList.forEach(function(item, i){
         displayMessage += `
-        <li>
-            <input type="checkbox" id="item_${i}" ${item.checked ? 'checked':''}>
+        <li >
+            <input type="checkbox" class="checkbox" id="item_${i}" ${item.checked ? 'checked':''}>
             <label for="item_${i}" class="${item.important?'important':''}">${item.todo}</label>
-            <button class="close" type="button" id="close_item_${i}" onclick="deleteTask(${i})">×</button>
+            <button class="close" type="button" id="close_item_${i}" onclick="deleteTask(${i})">Delete</button>
         </li>
         `;
         toDo.innerHTML = displayMessage;
