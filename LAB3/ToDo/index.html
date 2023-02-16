@@ -1,0 +1,152 @@
+<html>
+<head>
+    <style>
+        * {
+            font-family: monospace;
+            margin: 0;
+            padding: 0;
+        }
+        html, body{
+            height: 100%;
+        }
+        main {
+            display: grid;
+            grid-template-areas:
+                        'head head head head'
+                        'side content content content'
+                        'foot foot foot foot';
+            grid-template-rows: 50px auto 50px;
+            flex: 1 0 auto;
+        }
+        header{
+            grid-area: head;
+            max-height: 50px;
+        }
+        todo{
+            grid-area: content;
+        }
+        aside{
+            grid-area: side;
+            grid-row: auto;
+        }
+        footer{
+            max-height: 50px;
+            grid-area: foot;
+            flex: 0 0 auto;
+        }
+        .important{
+            font-weight: bold;
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+<main>
+    <header>
+        <div>
+            <h1 style="margin: 0 auto">header</h1>
+        </div>
+    </header>
+
+    <todo>
+        <h2>there will be todo list</h2>
+        <div class="todo_list">
+            <h3>My To Do list</h3>
+            <p>Some description about this to do list</p>
+            <div class="create_new_todo">
+                <input type="text" class="message">
+                <button class="add">Add task</button>
+            </div>
+            <div class="wrapper">
+                <ul class="todo">
+
+                </ul>
+            </div>
+        </div>
+    </todo>
+
+    <aside>
+        <h2>there will be aside part</h2>
+    </aside>
+
+    <footer>
+        <h2>there will be footer part</h2>
+    </footer>
+</main>
+
+<script>
+let addTask = document.querySelector('.message'),
+    addButton = document.querySelector('.add'),
+    toDo = document.querySelector('.todo');
+
+let ToDoList = [];
+
+if (localStorage.getItem("toDo")){
+    ToDoList = JSON.parse(localStorage.getItem("toDo"));
+    displayMessages();
+}
+
+addButton.addEventListener('click', function (){
+    let newTodo = {
+        todo: addTask.value,
+        checked: true,
+        important: false,
+    }
+    ToDoList.push(newTodo);
+    displayMessages();
+    localStorage.setItem('toDo', JSON.stringify((ToDoList)));
+})
+
+function displayMessages() {
+    let displayMessage = '';
+    if (ToDoList.length===0){
+        toDo.innerHTML = '';
+    }
+    ToDoList.forEach(function(item, i){
+        displayMessage += `
+        <li>
+            <input type="checkbox" id="item_${i}" ${item.checked ? 'checked':''}>
+            <label for="item_${i}" class="${item.important?'important':''}">${item.todo}</label>
+            <button class="close" type="button" id="close_item_${i}" onclick="deleteTask(${i})">×</button>
+        </li>
+        `;
+        toDo.innerHTML = displayMessage;
+    })
+}
+function deleteTask(id){
+    ToDoList.forEach(function (item,i){
+        if (i==id){
+            ToDoList.splice(i,1);
+        }
+        displayMessages();
+        localStorage.setItem('toDo', JSON.stringify(ToDoList));
+    })
+
+}
+
+toDo.addEventListener('change', function (event){
+    let valueLabel = toDo.querySelector('[for='+event.target.getAttribute('id')+']').innerHTML;
+
+    ToDoList.forEach(function(item){
+        if (item.todo === valueLabel){
+            item.checked = !item.checked;
+            localStorage.setItem('toDo', JSON.stringify((ToDoList)));
+        }
+    })
+
+})
+
+toDo.addEventListener('contextmenu', function(event){
+    event.preventDefault();
+    ToDoList.forEach(function (item){
+        if(item.todo === event.target.innerHTML){
+            item.important = !item.important;
+            displayMessages();
+            localStorage.setItem('toDo', JSON.stringify(ToDoList));
+        }
+    })
+})
+</script>
+</body>
+</html>
