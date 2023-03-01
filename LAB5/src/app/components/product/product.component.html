@@ -1,0 +1,27 @@
+<div class="py-4 px-6 border rounded flex items-center flex-col mb-2">
+  <img [src]="product.image" alt="{{product.title}}" class="w-1/3 mb-2">
+  <h2 class="mb-2 text-lg text-center">{{product.title}}</h2>
+  <p>Price: <span class="font-bold">{{product.price | currency:'₸'}}</span></p>
+  <button class="border rounded py-2 px-4 "
+          (click)="details = !details"
+          [ngClass]="{
+              'bg-amber-400': !details,
+              'bg-blue-400': details
+          }"
+  >
+    {{ details? "Hide":"Show"}} details
+  </button>
+
+  <div *ngIf="details" class="items-center flex flex-col">
+    <ul>
+      <li><p>Тип мотоцикла: {{product.characteristics.type}}</p>  </li>
+      <li><p>Максимальная скорость: {{product.characteristics.max_speed}} км/ч</p></li>
+    </ul>
+    <p>Оценки: <span>
+      {{product.rating.rate | number:'1.2-3'}}</span></p>
+    <a href="{{product.link}}" class="border rounded py-2.5 px-5">Ссылка на продукт</a>
+    <button class="border rounded py-1.5 px-3 bg-blue-700" type="button" (click)="share()">
+      Поделиться в Telegram
+    </button>
+  </div>
+</div>
