@@ -3,7 +3,7 @@ export interface MotoProduct {
   title: string
   price:number
   image: string
-  url: string
+  link: string
   characteristics:{
     type: string
     max_speed: number

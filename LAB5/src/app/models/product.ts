@@ -1,13 +1,13 @@
-export interface MotoProduct {
+export interface Products {
   id: number
+  category: string
   title: string
   price:number
+  liked: boolean
+  visible: boolean
   image: string
   link: string
-  characteristics:{
-    type: string
-    max_speed: number
-  }
+  characteristics: string
   rating:{
     rate: number
     count: number

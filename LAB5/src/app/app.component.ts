@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {MotoProduct} from "./models/product";
+import {Products} from "./models/product";
 import {products as data} from "./data/products";
 
 @Component({
@@ -8,6 +8,6 @@ import {products as data} from "./data/products";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'LAB4';
-  products: MotoProduct[] = data
+  title = 'LAB5';
+  products: Products[] = data
 }

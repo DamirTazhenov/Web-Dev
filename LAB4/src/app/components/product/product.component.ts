@@ -10,4 +10,7 @@ import {MotoProduct} from "../../models/product";
 export class ProductComponent {
   @Input() product: MotoProduct
   details = false
+  share() {
+    window.open("https://telegram.me/share/url?url=" + this.product.link)
+  }
 }

@@ -1,10 +1,18 @@
-<div class="max-w-full container mx-auto pt-5">
-  <h1 class="text-center font-bold mb-3 text-lg">{{title | titlecase}}</h1>
+<html>
+  <head>
+    <title>{{title | titlecase}}</title>
+  </head>
+  <body>
+  <div class="max-w-full container mx-auto pt-5">
+    <head-component>
 
-  <div class="w-auto flex-row flex">
-    <app-product
-      *ngFor="let product of products; let i = index"
-      [product]="product"
-    ></app-product>
+    </head-component>
+    <div class="w-auto flex-col flex">
+      <app-product
+        *ngFor="let product of products; let i = index"
+        [product]="product"
+      ></app-product>
+    </div>
   </div>
-</div>
+  </body>
+</html>

@@ -17,7 +17,11 @@
       <li><p>Тип мотоцикла: {{product.characteristics.type}}</p>  </li>
       <li><p>Максимальная скорость: {{product.characteristics.max_speed}} км/ч</p></li>
     </ul>
-    <p>Rate: <span>
+    <p>Оценки: <span>
       {{product.rating.rate | number:'1.2-3'}}</span></p>
+    <a href="{{product.link}}" class="border rounded py-2.5 px-5">Ссылка на продукт</a>
+    <button class="border rounded py-1.5 px-3 bg-blue-700" type="button" (click)="share()">
+      Поделиться в Telegram
+    </button>
   </div>
 </div>
