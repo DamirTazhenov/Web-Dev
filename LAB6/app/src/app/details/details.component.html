@@ -1,0 +1,10 @@
+<div *ngIf="load">
+  <fieldset>
+    <input type="text" [(ngModel)]="newAlbum.title">
+    <button (click)="updateAlbum()">Update title</button>
+  </fieldset>
+  <h2>{{album.title}}</h2>
+  <p><a routerLink="/albums/{{album.id}}/photos">Photos</a></p>
+</div>
+<h4 *ngIf="!load">The page is loading...</h4>
+<button routerLink="..">Return back</button>
