@@ -18,15 +18,17 @@
         <p [innerHTML]="product.characteristics">{{product.characteristics}}</p>
         <p>Оценки: <span>
       {{product.rating.rate | number:'1.2-3'}}</span></p>
-        <div class="border rounded"><input type="checkbox" [checked]="product.liked" (change)="like(product)">Like</div>
+        <div class="border rounded p-2"><input type="checkbox" [checked]="product.liked" (change)="like(product)">Like</div>
         <a href="{{product.link}}" class="border rounded py-2.5 px-5">Ссылка на продукт</a>
         <button class="border rounded py-1.5 px-3 bg-blue-400" type="button" (click)="share(product.link)">
           Поделиться в Telegram
         </button>
         <div class="border rounded py-1.5 px-3 bg-red-500"><button type="button" (click)="delete(product)">
           Delete
-        </button><div>
+        </button>
+          <div>
       </div>
-
+        </div>
     </div>
+  </div>
   </div>

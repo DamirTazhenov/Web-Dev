@@ -4,7 +4,7 @@
     <button (click)="updateAlbum()">Update title</button>
   </fieldset>
   <h2>{{album.title}}</h2>
-  <p><a routerLink="/albums/{{album.id}}/photos">Photos</a></p>
+  <p><a routerLink="/albums/{{album.id}}/photos">Show photo gallery</a></p>
 </div>
 <h4 *ngIf="!load">The page is loading...</h4>
-<button routerLink="..">Return back</button>
+<button routerLink="..">Go back</button>

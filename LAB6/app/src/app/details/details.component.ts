@@ -9,7 +9,7 @@ import {AlbumsService} from "../albums.service";
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent {
-  album:Albums;
+  album:Albums ;
   newAlbum:Albums;
   load:boolean;
   constructor(private albumsService:AlbumsService, private route:ActivatedRoute) {
