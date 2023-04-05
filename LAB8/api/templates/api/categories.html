@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Here is list of categories!</h1>
+{% if categories %}
+    <div class="category_list"></div>
+{% for category in categories %}
+    <div class="category_card">
+        <h2>{{ category.name }}</h2>
+        <a href="{% url 'product_of_one_category' category.id %}">link</a>
+    </div>
+{% endfor %}
+{% endif %}
+</body>
+</html>

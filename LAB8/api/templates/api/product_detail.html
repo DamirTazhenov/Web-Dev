@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% if product %}
+    <div class="products_list"></div>
+    <div class="product_card">
+        <h2>{{ product.name }}</h2>
+        <h3>{{ product.price }}$</h3>
+        <h3>Decription</h3>
+        <p>{{ product.description }}</p>
+        <h3>{{ product.count }}</h3>
+    </div>
+{% endif %}
+</body>
+</html>
