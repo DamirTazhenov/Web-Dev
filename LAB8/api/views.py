@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 from api.models import Product, Category
 
@@ -28,8 +28,14 @@ def all_categories(request):
 
 
 def one_category(request, id):
-    category = Category.objects.filter(id=id)
-    return render(request, 'api/one_category.html', {'category': category})
+    category = Category.objects.filter(id=id).get()
+    products = Product.objects.filter(category=category)
+    content = {
+        'category': category,
+        'products': products,
+
+    }
+    return render(request, 'api/one_category.html', content)
 
 
 def products_of_one_category(request, id):

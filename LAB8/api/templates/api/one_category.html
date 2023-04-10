@@ -8,7 +8,7 @@
 <h1>Here is category - {{ category.name }}</h1>
 {% if products %}
     {% for product in products %}
-        <div class="product_card {% if product.is_active %}disabled{% endif %}">
+        <div class="product_card {% if not product.is_active %}disabled{% endif %}">
             <hr>
         <h2>{{ product.name }}</h2>
         <h3>{{ product.price }}$</h3>
