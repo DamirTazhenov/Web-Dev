@@ -37,8 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'api',
+    'corsheaders',
     'rest_framework',
+    #local applications
+    'api',
+
 ]
 
 MIDDLEWARE = [
@@ -46,12 +49,17 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'LAB9.urls'
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:4200'
+]
+
+ROOT_URLCONF = 'LAB10.urls'
 
 TEMPLATES = [
     {
